@@ -1,0 +1,144 @@
+.student-list-card {
+  width: min(520px, calc(100% - 32px));
+  margin: 28px auto;
+  padding: 24px;
+  box-sizing: border-box;
+  text-align: left;
+  background: #ffffff;
+  border: 1px solid #d9e2ec;
+  border-radius: 8px;
+  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.08);
+}
+
+.student-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.student-list-title {
+  margin: 0;
+  color: #102a43;
+  font-size: 24px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.student-list-subtitle {
+  margin: 6px 0 0;
+  color: #627d98;
+  font-size: 14px;
+}
+
+.student-list-count {
+  min-width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  color: #ffffff;
+  background: #0f766e;
+  border-radius: 8px;
+  font-weight: 700;
+  box-shadow: 0 8px 20px rgba(15, 118, 110, 0.25);
+}
+
+.student-list {
+  display: grid;
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.student-list-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 54px;
+  padding: 12px 14px;
+  box-sizing: border-box;
+  color: #243b53;
+  background: #f8fafc;
+  border: 1px solid #e6edf3;
+  border-radius: 8px;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.student-list-item:hover {
+  transform: translateY(-2px);
+  border-color: #99f6e4;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+}
+
+.student-list-avatar {
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  color: #0f766e;
+  background: #ccfbf1;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.student-list-name {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.student-list-empty {
+  margin: 0;
+  padding: 22px;
+  color: #627d98;
+  text-align: center;
+  background: #f8fafc;
+  border: 1px dashed #bcccdc;
+  border-radius: 8px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .student-list-card {
+    background: #1f2937;
+    border-color: #334155;
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.26);
+  }
+
+  .student-list-title {
+    color: #f8fafc;
+  }
+
+  .student-list-subtitle,
+  .student-list-empty {
+    color: #cbd5e1;
+  }
+
+  .student-list-item,
+  .student-list-empty {
+    background: #111827;
+    border-color: #374151;
+  }
+
+  .student-list-item {
+    color: #e5e7eb;
+  }
+}
+
+@media (max-width: 520px) {
+  .student-list-card {
+    width: calc(100% - 24px);
+    padding: 18px;
+  }
+
+  .student-list-title {
+    font-size: 21px;
+  }
+}
