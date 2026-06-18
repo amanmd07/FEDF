@@ -1,0 +1,58 @@
+Live Hospital Bed Monitoring Platform - Deliverable
+
+Project structure (root: proj):
+
+- server/
+  - index.js             (Express server entry)
+  - package.json         (server dependencies & scripts)
+  - .env.example         (example env variables)
+  - seed.js              (seed DB with dummy users, beds, patient)
+
+  - routes/
+    - auth.js
+    - beds.js
+    - patients.js        (includes assign-bed, discharge, search)
+  - middleware/auth.js   (JWT auth + role enforcement)
+
+- client/
+  - package.json
+  - index.html
+  - src/
+    - main.jsx
+    - App.jsx
+    - styles.css
+    - pages/
+      - Landing.jsx
+      - Login.jsx
+      - ReceptionistDashboard.jsx (admit/assign/discharge implemented)
+      - NurseDashboard.jsx
+      - DoctorDashboard.jsx
+    - ui/
+      - LoginCard.jsx
+
+- README.md
+
+Quick run steps:
+
+1) Start server:
+
+   cd server
+   npm install
+   cp .env.example .env
+   # edit .env to set JWT_SECRET if needed
+   npm run seed
+   npm run dev
+
+2) Start client:
+
+   cd client
+   npm install
+   npm run dev
+
+Notes:
+- Default seeded users: `reception1` (receptionist), `nurse1` (nurse), `doctor1` (doctor) with password `MediFlowSecure2026!`.
+- JWT token stored in `localStorage` by the client on login.
+- Receptionist dashboard supports admitting patients, assigning available beds, and discharging patients.
+- More features (real-time via Socket.io, analytics charts, accessibility tuning, and robust validation) can be added next.
+
+Files were created/modified on: 2026-05-21
